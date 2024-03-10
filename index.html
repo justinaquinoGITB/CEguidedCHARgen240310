@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="character-creation">
+    <h1>Character Creator</h1>
+    <div>
+        <label for="characterName">Enter character name:</label>
+        <input type="text" id="characterName">
+    </div>
+    <button onclick="rollStats()">Roll Stats</button>
+    <div id="rolledStats"></div>
+    <div id="stats"></div>
+    <button id="acceptButton" onclick="acceptStats()">Accept</button>
+</div>
+    <script src="script.js"></script>
+</body>
+
+<div id="characterSummary" class="summary"></div>
+</html>
