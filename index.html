@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Creator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cepheus Engine Guided Character Creator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<button onclick="toggleTheme()">Toggle Theme</button>
+
 <body>
     <div class="container">
         <div class="character-creation">
-    <h1>Character Creator</h1>
-    <div>
-        <label for="characterName">Enter character name:</label>
-        <input type="text" id="characterName">
+            <h1>Cepheus Engine Guided Character Creator</h1>
+            <p>[Character creation form and steps go here]</p>
+            <label for="characterName">Character Name:</label>
+    <input type="text" id="characterName" onchange="character.name = this.value;">
+    <div class="dice-roll">
+        <h2>Roll Stats</h2>
+        <button onclick="rollDice()">Roll 2D6</button>
+        <div id="diceResults" class="dice-container"></div>
+        <div id="char-Str" class="characteristic" ondragover="allowDrop(event)" ondrop="drop(event, 'Str')">
+            <span class="char-label">Str</span>
+            <div class="char-slot"></div>
+        </div>
+        <div id="char-Dex" class="characteristic" ondragover="allowDrop(event)" ondrop="drop(event, 'Dex')">
+            <span class="char-label">Dex</span>
+            <div class="char-slot"></div>
+        </div>  
+        <div id="char-End" class="characteristic" ondragover="allowDrop(event)" ondrop="drop(event, 'End')">
+            <span class="char-label">End</span>
+            <div class="char-slot"></div>
+        </div>  
+        <div id="char-Int" class="characteristic" ondragover="allowDrop(event)" ondrop="drop(event, 'Int')">
+            <span class="char-label">Int</span>
+            <div class="char-slot"></div>
+        </div>  
+        <div id="char-Edu" class="characteristic" ondragover="allowDrop(event)" ondrop="drop(event, 'Edu')">
+            <span class="char-label">Edu</span>
+            <div class="char-slot"></div>
+        </div>  
+        <div id="char-Soc" class="characteristic" ondragover="allowDrop(event)" ondrop="drop(event, 'Soc')">
+            <span class="char-label">Soc</span>
+            <div class="char-slot"></div>
+        </div>   
+        <!-- Repeat for other characteristics -->
+        
+        <button onclick="acceptStats()">Accept Stats</button>
     </div>
-    <button onclick="rollStats()">Roll Stats</button>
-    <div id="rolledStats"></div>
-    <div id="stats"></div>
-    <button id="acceptButton" onclick="acceptStats()">Accept</button>
-</div>
+
+<!-- Repeat for other characteristics -->
+
+            <button onclick="updateSummary()">Update Summary</button>
+        </div>
+        <div class="summary">
+            <h2>Character Summary</h2>
+            <div id="summaryContent">
+                <p>[Summary details will be listed here]</p>
+            </div>
+            <button onclick="updateSummary()">Update Summary</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
-<div id="characterSummary" class="summary"></div>
 </html>
